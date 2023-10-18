@@ -5,11 +5,11 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <CampoTexto label="Nome" placeholder="Informe o seu nome" />
-      <CampoTexto label="Idade" placeholder="Informe a sua idade"/>
-      <CampoTexto label="Formacao" placeholder="Informe a sua formação"/>
-      <CampoTexto label="Cargo" placeholder="Informe o seu cargo"/>
-      <CampoTexto label="Imagem" placeholder="Informe o endereço da imagem"/>
+      <CampoTexto label="Nome" id="Nome" name="Nome" placeholder="Informe o seu nome" />
+      <CampoTexto label="Idade" id="Idade" name="Idade" placeholder="Informe a sua idade"/>
+      <CampoTexto label="Formacao" id="Formacao" name="Formacao" placeholder="Informe a sua formação"/>
+      <CampoTexto label="Cargo" id="Cargo" name="Cargo" placeholder="Informe o seu cargo"/>
+      <CampoTexto label="Imagem" id="Imagem" name="Imagem" placeholder="Informe o endereço da imagem"/>
     </div>
   );
 }
