@@ -1,8 +1,9 @@
 import CampoTexto from "../CampoTexto/CampoTexto";
-import './Formulario.css'
+import './Formulario.css';
+
 const Formulario = () => {
     return (
-        <div className="">
+        <div className="formulario">
             <form>
                 <h2>Preencha os dados para criar o Card do Colaborador</h2>
                 <CampoTexto label="Nome" id="Nome" name="Nome" placeholder="Informe o seu nome" />
