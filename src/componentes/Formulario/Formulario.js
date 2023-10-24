@@ -10,10 +10,8 @@ const Formulario = (props) => {
         '',
         'Programação',
         'Front-End',
-        'Data Science',
-        'DevOps',
-        'UX e Design',
-        'Mobile',
+        'Educação e Psicologia',
+        'Medicina',
         'Inovação e Gestão'
     ];
     const labelCriarCard = "Criar Card";
@@ -59,7 +57,7 @@ const Formulario = (props) => {
                     aoAlterado={valor => setIdade(valor)}    
                 />
                 <CampoTexto 
-                    label="Formacao"
+                    label="Formação"
                     obrigatorio={true} 
                     id="Formacao" 
                     name="Formacao"
