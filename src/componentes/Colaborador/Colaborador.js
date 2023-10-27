@@ -1,14 +1,16 @@
 import './Colaborador.css';
 
-const Colaborador = () => {
+const Colaborador = (props) => {
+
+    const textoAlternativoModificado = `Imagem de ${props.nome}`
     return (
         <div className='colaborador'>
             <div className='cabecalho'>
-                <img src='https://github.com/marcelybigsantello.png' alt='Imagem Marcely Santello'></img>
+                <img src={props.imagem} alt={textoAlternativoModificado}></img>
             </div>
             <div className='rodape'>
-                <h4>Marcely Santello</h4>
-                <h5>Analista de Sistemas Pleno</h5>
+                <h4>{props.nome}</h4>
+                <h5>{props.cargo}</h5>
             </div>
         </div>
     );
