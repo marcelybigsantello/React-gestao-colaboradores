@@ -15,8 +15,13 @@ function App() {
     },
     {
       nome: 'Front-End',
-      corPrimaria: '#82CFFA',
-      corSecundaria: '#E8F8FF'
+      corPrimaria: '#DB6EBF',
+      corSecundaria: '#FAE9F5'
+    },
+    {
+      nome: 'Data Science',
+      corPrimaria: '#DB6EBF',
+      corSecundaria: '#FAE9F5'
     },
     {
       nome: 'Educação e Psicologia',
@@ -29,9 +34,19 @@ function App() {
       corSecundaria: '#FFF5D9'
     },
     {
-      nome: 'Inovação e Gestão',
-      corPrimaria: '#DB6EBF',
-      corSecundaria: '#FAE9F5'
+      nome: 'Engenharia',
+      corPrimaria: '#82CFFA',
+      corSecundaria: '#E8F8FF'
+    },
+    {
+      nome: 'Nutrição',
+      corPrimaria: '#FF8A29',
+      corSecundaria: '#FFEEDF'
+    },
+    {
+      nome: 'Administração',
+      corPrimaria: '#BD31DA',
+      corSecundaria: '#D27AE4F1'
     },
   ]
 
