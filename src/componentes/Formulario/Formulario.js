@@ -35,7 +35,7 @@ const Formulario = (props) => {
                     id="Nome" 
                     name="Nome" 
                     placeholder="Informe o seu nome"
-                    value={nome}
+                    valor={nome}
                     aoAlterado={valor => setNome(valor)} 
                 />
                 <CampoTexto 
@@ -44,7 +44,7 @@ const Formulario = (props) => {
                     id="Idade"
                     name="Idade"
                     placeholder="Informe a sua idade" 
-                    value={idade}
+                    valor={idade}
                     aoAlterado={valor => setIdade(valor)}    
                 />
                 <CampoTexto 
@@ -53,7 +53,7 @@ const Formulario = (props) => {
                     id="Formacao" 
                     name="Formacao"
                     placeholder="Informe a sua formação"
-                    value={formacao}
+                    valor={formacao}
                     aoAlterado={valor => setFormacao(valor)}
                  />
                 <CampoTexto
@@ -62,7 +62,7 @@ const Formulario = (props) => {
                     id="Cargo" 
                     name="Cargo" 
                     placeholder="Informe o seu cargo" 
-                    value={cargo}
+                    valor={cargo}
                     aoAlterado={valor => setCargo(valor)}
                 />
                 <CampoTexto 
@@ -70,14 +70,14 @@ const Formulario = (props) => {
                     id="Imagem" 
                     name="Imagem" 
                     placeholder="Informe o endereço da imagem"
-                    value={imagem}
+                    valor={imagem}
                     aoAlterado={valor => setImagem(valor)}
                 />
                 <ListaSuspensa 
                     label="Time" 
                     obrigatorio={true} 
                     itens={props.times}
-                    value={time}
+                    valor={time}
                     aoAlterado={val => setTime(val)}
                 />
                 <Botao>

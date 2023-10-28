@@ -5,7 +5,7 @@ const Colaborador = (props) => {
     const textoAlternativoModificado = `Imagem de ${props.nome}`
     return (
         <div className='colaborador'>
-            <div className='cabecalho'>
+            <div className='cabecalho' style={{ backgroundColor: props.corDeFundo }}>
                 <img src={props.imagem} alt={textoAlternativoModificado}></img>
             </div>
             <div className='rodape'>
