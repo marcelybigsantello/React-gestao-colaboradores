@@ -64,6 +64,7 @@ function App() {
         corPrimaria={time.corPrimaria}
         corSecundaria={time.corSecundaria}
         listaColaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+        
       />)}
       <Rodape />
     </div>
