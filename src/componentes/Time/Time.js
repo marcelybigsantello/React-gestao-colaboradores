@@ -3,7 +3,7 @@ import './Time.css';
 
 const Time = (props) => {
 
-    const css = { backgroundColor: props.corSecundaria };
+    const css = { backgroundColor: props.corSecundaria, backgroundImage: 'url(/imagens/fundo.png)' };
 
     function excluirColaborador() {
         console.log("Excluindo o colaborador");
