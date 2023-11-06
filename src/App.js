@@ -10,13 +10,13 @@ function App() {
   const [times, setTimes] = useState([
     {
       nome: 'Programação',
-      corPrimaria: '#57C278',
-      corSecundaria: '#D9F7E9'
+      corPrimaria: '#DB6EBF',
+      corSecundaria: '#FAE9F5'
     },
     {
       nome: 'Front-End',
-      corPrimaria: '#DB6EBF',
-      corSecundaria: '#FAE9F5'
+      corPrimaria: '#57C278',
+      corSecundaria: '#D9F7E9'
     },
     {
       nome: 'Data Science',
