@@ -16,7 +16,7 @@ function App() {
     {
       id: uuidv4(),
       nome: 'Front-End',
-      cor: '#D9F7E9'
+      cor: '#82CFFA'
     },
     {
       id: uuidv4(),
@@ -51,7 +51,7 @@ function App() {
     {
       id: uuidv4(),
       nome: 'UX e Design',
-      cor: '#D27AE4F1'
+      cor: '#FFBA05'
     }
   ]);
 
@@ -101,8 +101,8 @@ function App() {
     }));
   }
 
-  function excluirColaborador() {
-    console.log("Excluindo o colaborador");
+  function excluirColaborador(id) {
+    setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id))
   }
 
   return (
