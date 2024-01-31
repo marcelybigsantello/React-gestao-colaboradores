@@ -2,13 +2,18 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import './Colaborador.css';
 
 const Colaborador = (props) => {
-    const textoAlternativoModificado = `Imagem de ${props.colaborador}`
+    const textoAlternativoModificado = `Imagem de ${props.colaborador}`;
+
+    function excluirColaborador() {
+        props.aoExcluir(props.colaborador.id);
+    }
+
     return (
         <div className='colaborador'>
             <AiFillCloseCircle 
                 size={25} 
                 className="deletar" 
-                onClick={()=> props.aoExcluir(props.colaborador.id)} 
+                onClick={excluirColaborador} 
             />
             <div className='cabecalho' style={{ backgroundColor: props.corDeFundo }}>
                 <img src={props.colaborador.imagem} alt={textoAlternativoModificado}></img>
