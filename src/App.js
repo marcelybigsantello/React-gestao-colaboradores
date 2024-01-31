@@ -3,79 +3,121 @@ import Banner from './componentes/Banner/Banner';
 import Formulario from './componentes/Formulario/Formulario';
 import Rodape from './componentes/Rodape/Rodape';
 import Time from './componentes/Time/Time';
+import { v4 as uuidv4 } from 'uuid';
 
 function App() {
 
-  const [colaboradores, setColaboradores] = useState([]);
   const [times, setTimes] = useState([
     {
+      id: uuidv4(),
       nome: 'Programação',
-      corPrimaria: '#DB6EBF',
-      corSecundaria: '#FAE9F5'
+      cor: '#df25c0'
     },
     {
+      id: uuidv4(),
       nome: 'Front-End',
-      corPrimaria: '#57C278',
-      corSecundaria: '#D9F7E9'
+      cor: '#D9F7E9'
     },
     {
+      id: uuidv4(),
       nome: 'Data Science',
-      corPrimaria: '#DB6EBF',
-      corSecundaria: '#FAE9F5'
+      cor: '#FAE9F5'
     },
     {
+      id: uuidv4(),
       nome: 'Educação e Psicologia',
-      corPrimaria: '#E06B69',
-      corSecundaria: '#FDE7E8'
+      cor: '#FDE7E8'
     },
     {
+      id: uuidv4(),
       nome: 'Medicina',
-      corPrimaria: '#FFBA05',
-      corSecundaria: '#FFF5D9'
+      cor: '#FFF5D9'
     },
     {
+      id: uuidv4(),
       nome: 'Engenharia',
-      corPrimaria: '#82CFFA',
-      corSecundaria: '#E8F8FF'
+      cor: '#E8F8FF'
     },
     {
+      id: uuidv4(),
       nome: 'Nutrição',
-      corPrimaria: '#FF8A29',
-      corSecundaria: '#FFEEDF'
+      cor: '#FFEEDF'
     },
     {
+      id: uuidv4(),
       nome: 'Administração',
-      corPrimaria: '#BD31DA',
-      corSecundaria: '#D27AE4F1'
+      cor: '#D27AE4F1'
     },
+    {
+      id: uuidv4(),
+      nome: 'UX e Design',
+      cor: '#D27AE4F1'
+    }
   ]);
 
-  const aoNovoColaboradorAdicionado = (colaborador) => {
-    setColaboradores([...colaboradores, colaborador]);
-  }
+  const inicial = [
+    {
+      id: uuidv4(),
+      nome: 'Marcely Santello',
+      imagem: 'https://github.com/marcelybigsantello.png',
+      cargo: 'Analista de Sistemas Pleno',
+      formacao: 'Bacharelado em Sistemas de Informação',
+      time: times[0].nome
+    },
+    {
+      id: uuidv4(),
+      nome: 'João Cesar',
+      imagem: '',
+      cargo: 'Analista de Sistemas Java Sênior',
+      formacao: 'Bacharelado em Ciências da Computação',
+      time: times[0].nome
+    },
+    {
+      id: uuidv4(),
+      nome: 'Jose Almeida',
+      imagem: '',
+      cargo: 'Analista de Sistemas JavaScript Sênior',
+      formacao: 'Tecnólogo em Análise e Desenvolvimento de Sistemas',
+      time: times[1].nome
+    },
+    {
+      id: uuidv4(),
+      nome: 'Maria Oliveira',
+      imagem: '',
+      cargo: 'Analista de UX Pleno',
+      formacao: 'Especialista em UX Design',
+      time: times[8].nome
+    },
+  ]
 
-  function alterarCorTime(cor, nome){
+  const [colaboradores, setColaboradores] = useState(inicial);
+
+  function alterarCor(cor, id) {
     setTimes(times.map(time => {
-      if (time.nome === nome){
-        time.corPrimaria = cor;
+      if (time.id === id) {
+        time.cor = cor;
       }
       return time;
     }));
   }
 
+  function excluirColaborador() {
+    console.log("Excluindo o colaborador");
+  }
+
   return (
     <div className="App">
       <Banner />
-      <Formulario times={times.map(item => item.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)} />
-      {times.map(time => <Time
-        alterarCor={alterarCorTime}
-        key={time.nome}
-        nome={time.nome}
-        corPrimaria={time.corPrimaria}
-        corSecundaria={time.corSecundaria}
-        listaColaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
-        
-      />)}
+      <Formulario times={times.map(item => item.nome)} aoCadastrar={colaborador => setColaboradores([...colaboradores, colaborador])} />
+      <section className='times'>
+        {times.map((time, indice) => <Time
+          alterarCor={alterarCor}
+          key={indice}
+          time={time}
+          listaColaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
+          aoExcluir={excluirColaborador}
+        />)}
+      </section>
       <Rodape />
     </div>
   );

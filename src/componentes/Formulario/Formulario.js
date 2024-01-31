@@ -15,7 +15,7 @@ const Formulario = (props) => {
 
     const aoSalvar = (event) => {
         event.preventDefault();
-        props.aoColaboradorCadastrado({
+        props.aoCadastrar({
             nome,
             idade, 
             formacao,
