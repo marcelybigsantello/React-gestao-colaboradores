@@ -105,10 +105,18 @@ function App() {
     setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id))
   }
 
+  function cadastrarTime(novoTime){
+    setTimes([...times, {...novoTime, id: uuidv4()}])
+  }
+
   return (
     <div className="App">
       <Banner />
-      <Formulario times={times.map(item => item.nome)} aoCadastrar={colaborador => setColaboradores([...colaboradores, colaborador])} />
+      <Formulario 
+        cadastrarTime={cadastrarTime}
+        times={times.map(item => item.nome)} 
+        aoCadastrar={colaborador => setColaboradores([...colaboradores, colaborador])} 
+      />
       <section className='times'>
         {times.map((time, indice) => <Time
           alterarCor={alterarCor}
