@@ -59,6 +59,7 @@ function App() {
     {
       id: uuidv4(),
       nome: 'Marcely Santello',
+      favorito: false,
       imagem: 'https://github.com/marcelybigsantello.png',
       cargo: 'Analista de Sistemas Pleno',
       formacao: 'Bacharelado em Sistemas de Informação',
@@ -67,6 +68,7 @@ function App() {
     {
       id: uuidv4(),
       nome: 'João Cesar',
+      favorito: false,
       imagem: '',
       cargo: 'Analista de Sistemas Java Sênior',
       formacao: 'Bacharelado em Ciências da Computação',
@@ -75,6 +77,7 @@ function App() {
     {
       id: uuidv4(),
       nome: 'Jose Almeida',
+      favorito: false,
       imagem: '',
       cargo: 'Analista de Sistemas JavaScript Sênior',
       formacao: 'Tecnólogo em Análise e Desenvolvimento de Sistemas',
@@ -83,6 +86,7 @@ function App() {
     {
       id: uuidv4(),
       nome: 'Maria Oliveira',
+      favorito: false,
       imagem: '',
       cargo: 'Analista de UX Pleno',
       formacao: 'Especialista em UX Design',
@@ -100,14 +104,24 @@ function App() {
       return time;
     }));
   }
+  
+  function cadastrarTime(novoTime){
+    setTimes([...times, {...novoTime, id: uuidv4()}])
+  }
 
   function excluirColaborador(id) {
     setColaboradores(colaboradores.filter(colaborador => colaborador.id !== id))
   }
 
-  function cadastrarTime(novoTime){
-    setTimes([...times, {...novoTime, id: uuidv4()}])
+  function resolverFavorito(id){
+    setColaboradores(colaboradores.map(colaborador => {
+      if (colaborador.id === id){
+        colaborador.favorito = !colaborador.favorito;
+      }
+      return colaborador;
+    }))
   }
+
 
   return (
     <div className="App">
@@ -124,6 +138,7 @@ function App() {
           time={time}
           listaColaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
           aoExcluir={excluirColaborador}
+          aoFavoritar={resolverFavorito}
         />)}
       </section>
       <Rodape />
