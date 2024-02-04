@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Botao from "../Botao";
-import CampoTexto from "../CampoTexto/CampoTexto";
+import CampoForm from "../CampoForm/CampoForm";
 import ListaSuspensa from "../ListaSuspensa/ListaSuspensa";
 import './Formulario.css';
 
@@ -32,7 +32,7 @@ const Formulario = (props) => {
         <div className="formulario">
             <form onSubmit={aoSalvar}>
                 <h2>Preencha os dados para criar o Card do Colaborador</h2>
-                <CampoTexto 
+                <CampoForm 
                     label="Nome" 
                     obrigatorio={true} 
                     id="Nome" 
@@ -41,7 +41,7 @@ const Formulario = (props) => {
                     valor={nome}
                     aoAlterado={valor => setNome(valor)} 
                 />
-                <CampoTexto 
+                <CampoForm 
                     label="Idade"
                     obrigatorio={true} 
                     id="Idade"
@@ -50,7 +50,7 @@ const Formulario = (props) => {
                     valor={idade}
                     aoAlterado={valor => setIdade(valor)}    
                 />
-                <CampoTexto 
+                <CampoForm 
                     label="Formação"
                     obrigatorio={true} 
                     id="Formacao" 
@@ -59,7 +59,7 @@ const Formulario = (props) => {
                     valor={formacao}
                     aoAlterado={valor => setFormacao(valor)}
                  />
-                <CampoTexto
+                <CampoForm
                     label="Cargo"
                     obrigatorio={true}
                     id="Cargo" 
@@ -68,7 +68,7 @@ const Formulario = (props) => {
                     valor={cargo}
                     aoAlterado={valor => setCargo(valor)}
                 />
-                <CampoTexto 
+                <CampoForm 
                     label="Imagem" 
                     id="Imagem" 
                     name="Imagem" 
@@ -92,7 +92,7 @@ const Formulario = (props) => {
                 props.cadastrarTime({ nome: nomeTime, cor: corTime })
             }}>
                 <h2>Preencha os dados para criar um novo time</h2>
-                <CampoTexto 
+                <CampoForm 
                     label="Nome" 
                     obrigatorio={true} 
                     id="Nome" 
@@ -101,8 +101,9 @@ const Formulario = (props) => {
                     valor={nomeTime}
                     aoAlterado={valor => setNomeTime(valor)} 
                 />
-                <CampoTexto 
+                <CampoForm 
                     label="Cor"
+                    type='color'
                     obrigatorio={true} 
                     id="Cor"
                     name="Cor"
